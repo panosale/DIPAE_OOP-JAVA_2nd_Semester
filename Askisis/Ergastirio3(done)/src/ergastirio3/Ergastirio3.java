@@ -16,7 +16,7 @@ static int fibonacci(int f) {
    else
        return fibonacci(f - 1) + fibonacci(f - 2);
 }
-// Ypologismos palindromou Integer
+// Ypologismos palindromou Integer (me Anadromi)
 static int isReversed = 0; // Xrisi global metavlitis gia tin evresi tou palindromou Integer. Prepei na arxikopoieitai kathe fora prin tin klisi tis methodou.
 static int palindromosArithmos(int n) {
     if (n > 0) {
@@ -25,6 +25,18 @@ static int palindromosArithmos(int n) {
         palindromosArithmos(n / 10);
     }
     return isReversed;
+}
+// Ypologismos palindromou Integer (Xoris Anadromi)
+static boolean isPalindrome(int x) {
+    String s = (x + "");
+    int j = s.length() - 1;
+    for (int  i=0; i < s.length() / 2; i++)
+        if (!(s.charAt(i) == s.charAt(j)))
+            return (false);
+        else
+        if (j > 1)
+            j--;
+    return (true);
 }
 // Ypologismos palindromou String
 static Boolean palindromoString(String s) {
